@@ -1,0 +1,39 @@
+<div class="rates_table_block">
+
+  <div class="date_picker">
+
+    <mat-form-field>
+      <input matInput [matDatepicker]="startPicker" placeholder="Angular forms" [formControl]="date">
+      <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+      <mat-datepicker #startPicker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput [matDatepicker]="endPicker" placeholder="Value binding" [value]="date.value">
+      <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+      <mat-datepicker #endPicker></mat-datepicker>
+    </mat-form-field>
+
+  </div>
+
+  <div class="current_table">
+    <table matSort (matSortChange)="sortData($event)">
+      <tr>
+        <th mat-sort-header="date"> </th>
+        <th mat-sort-header="USD">USD</th>
+        <th mat-sort-header="EUR">EUR</th>
+        <th mat-sort-header="GBP">GBP</th>
+      </tr>
+
+      <tr >
+        <td>{{rate.cc}}</td>
+        <td>{{rate.cc}}</td>
+        <td>{{rate.rate}}</td>
+        <td>{{rate.rate}}</td>
+      </tr>
+
+
+    </table>
+  </div>
+
+</div>
